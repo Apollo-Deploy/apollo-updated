@@ -1,0 +1,5 @@
+d /run/apollo-updated 0750 apollo-updated apollo-update -
+d /run/apollo-updated-generations 0755 root root -
+d /var/lib/apollo-updated 0700 apollo-updated apollo-update -
+d /var/lib/apollo-updated-supervisor 0755 root root -
+d /etc/apollo-updated 0750 root apollo-update -

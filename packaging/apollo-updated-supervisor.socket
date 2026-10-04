@@ -1,0 +1,14 @@
+[Unit]
+Description=Private Apollo generation supervisor socket
+
+[Socket]
+ListenStream=/run/apollo-updated/supervisor.sock
+SocketUser=apollo-updated
+SocketGroup=apollo-update
+SocketMode=0660
+FileDescriptorName=apollo-updated-supervisor
+RemoveOnStop=no
+Service=apollo-updated-supervisor.service
+
+[Install]
+WantedBy=sockets.target

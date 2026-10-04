@@ -1,0 +1,27 @@
+data_root = "/var/lib/apollo-updated"
+socket_path = "/run/apollo-updated/control.sock"
+allowed_group = "apollo-update"
+max_artifact_size = 1073741824
+metadata_url = "https://updates.example.invalid/metadata/"
+targets_url = "https://updates.example.invalid/targets/"
+trusted_root = "/etc/apollo-updated/trusted-root.json"
+
+[[packages]]
+package_id = "example-daemon"
+service_name = "example-daemon"
+architecture = "x86_64-linux-gnu"
+allow_listenerless = false
+health_executables = []
+# Optional probes must match a complete readiness entry in root-owned local policy.
+health_probes = []
+
+# Reversible systemd handoff requires a root-owned generation policy.
+# The named app socket must be an Accept=no socket unit attached to the
+# apollo-updated-supervisor.service broker as described in packaging/README.md.
+[packages.generation]
+socket_unit = "example-daemon.socket"
+entrypoint = "bin/example-daemon"
+argv = ["serve"]
+runtime_uid = 10001
+runtime_gid = 10001
+writable_paths = ["/var/lib/example-daemon"]

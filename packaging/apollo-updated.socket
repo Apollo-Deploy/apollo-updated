@@ -1,0 +1,13 @@
+[Unit]
+Description=Apollo package updater control socket
+
+[Socket]
+ListenStream=/run/apollo-updated/control.sock
+SocketUser=apollo-updated
+SocketGroup=apollo-update
+SocketMode=0660
+RemoveOnStop=no
+Service=apollo-updated.service
+
+[Install]
+WantedBy=sockets.target

@@ -1,0 +1,30 @@
+/target/
+.DS_Store
+*.log
+__pycache__/
+*.pyc
+
+# Keep qualification signing material local.
+/qualification/private/
+
+# Historical top-level source snapshots; Cargo builds from src/.
+/api.rs
+/archive.rs
+/audit.rs
+/bin/
+/cli.rs
+/contract.rs
+/disk.rs
+/disk/
+/error.rs
+/history.rs
+/lib.rs
+/lifecycle.rs
+/lifecycle/
+/main.rs
+/settings.rs
+/state.rs
+/supervisor.rs
+/supervisor/
+/tuf_client.rs
+/tuf_client_tests.rs

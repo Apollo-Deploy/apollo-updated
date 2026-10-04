@@ -1,0 +1,2 @@
+u apollo-updated - "Apollo package updater" /var/lib/apollo-updated /usr/sbin/nologin
+g apollo-update -
